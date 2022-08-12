@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Исправляет белую линнию в адаптивной верстке -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,regular,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="container">
+            <!-- блок относиться к родителю header, их связь показываем __ -->
+            <div class="header__inner">
+                <div class="header__logo">
+
+                    <!-- Для блока навигации используем тег nav -->
+                    <nav class="nav" id="nav">
+                        <!-- Если нет ссылки в href="", обязательно ставим заглушку # -->
+                        <a class="nav__link" href="#" data-scroll="#works">Works</a>
+                        <a class="nav__link" href="#" data-scroll="#about">About</a>
+                        <a class="nav__link" href="#" data-scroll="#services">Services</a>
+                        <a class="nav__link" href="#" data-scroll="#blog">Blog</a>
+                        <a class="nav__link" href="#" data-scroll="#footer">Contact</a>
+                    </nav>
+                    <!-- Воеменно скрыл бургер меню, что бы не мешало -->
+                    <!-- <button class="burger" type="button" id="navToggle">
+                        <span class="burger__item">Menu</span>
+                    </button> -->
+                </div>
+            </div>
+    </header>
+    <div class="intro" id="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <h1 class="intro__title">WHERE GREAT IDEAS COME TO LIFE
+                </h1>
+                <h2 class="intro__subtitle">Passionate creative studio helping startups grow their business!
+                </h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="about">
+
+        <h2 class="about__title">WE ARE</h2>
+        <h3 class="about__subtitle">THE SQWD</h3>
+        <h4 class="about__subtitle__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt. </h4>
+
+        <div class="about__img">
+            <img class="about__face" src="/agency/img/Image 1.png" alt="Face">
+
+            <img class="about__green" src="/agency/img/Green Box.png" alt="Grenbox">
+
+            <img class="about__people" src="/agency/img/Image 2.png" alt="People">
+        </div>
+    </div>
+
+    <div class="servises">
+        <div class="grid">
+            dsadasdasdasda
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

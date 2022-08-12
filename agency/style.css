@@ -1,0 +1,289 @@
+body {
+    /*Сбросим отпуспы в 0*/
+    margin: 0;
+    /*Сглаживание шрифтов Делать не обязательно*/
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /*Убераем насткройки отпуспов поумолчанию браузеров*/
+    margin: 0;
+}
+
+p {
+    /*аналогично как и с загаловками*/
+    margin: 0 0 10px 0;
+}
+
+*,
+*:before,
+*:after {
+    /*Установка алгоритма подсчета блоков с учетом pading и границ*/
+    box-sizing: border-box;
+}
+
+/*---------------Базовые настройки закончились------------------*/
+/*Стилизация основного контейнера*/
+.container {
+    /*По ширине всего Контейнера*/
+    width: 100%;
+    /*Максимальная ширина контейнера 1171px + 30px которые заберает padding, подготовка сразу для адаптивной верски*/
+    max-width: 1200px;
+    /*Выравниваине по центру auto, слева и справа 0*/
+    margin: 0 auto;
+    /* Увеличиваем для дальнейшей адаптивной верстки */
+    padding: 0 15px;
+
+
+}
+
+/*Header Стилизация шапки */
+.header {
+    /*Написано это после создания класса Intro. Блок нахдился поверх всех блоков, в данном случае для картинки бекграунда. Слой поверх всех слоев*/
+    position: absolute;
+
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /*Для отображения поверх всех элементов*/
+    z-index: 1000;
+
+
+}
+
+/* js!!! */
+/* .header.fixed {
+    position: fixed;
+    background-color: #cdcdcd;
+    height: auto;
+}
+
+.header.fixed .header__inner {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 0;
+
+} */
+
+.header__inner {
+    /*Поумолчанию стоит display:block*/
+    display: flex;
+    /*justify-content это свойство Flex,Отвечает за выравнивание элементов по главной оси:*/
+
+    justify-content: flex-end;
+    /*Делаем полоску снизу, сплошную, цвет*/
+
+    /*Внутрений отсуп внутри header__inner сверху и снизу 37px*/
+    padding: 30px;
+    /*выравнивание предметов блока по гаризонтальной линии по центру */
+    align-items: center;
+
+}
+
+
+.nav {
+    display: flex;
+    /*Устанвливаем размер и ширину подключенного шрифта*/
+    /*Делаем все буквы большие*/
+
+}
+
+.nav__link {
+    /*Так как в .nav установлен теперь flex, то можно прописывать отсупы margin*/
+    margin-left: 60px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1.94px;
+    text-transform: uppercase;
+
+    /*Убираем линию у ссылок*/
+    text-decoration: none;
+    cursor: pointer;
+
+    border-bottom: 2px solid rgba(76, 175, 80, 1);
+
+
+}
+
+.nav__link::before {
+    content: '';
+    margin-left: -20px;
+
+}
+
+/*Псевдокласс первого элемента в .nav__link*/
+.nav__link:first-child {
+    /*Так как отсуп для первого элемнета бессмыслен, убераем его */
+    margin-left: 0px;
+}
+
+/*hover то есть при наведении курсора срабатывает этот стиль*/
+.nav__link:hover {
+    /*Линия под ссылками*/
+    text-decoration: underline rgba(76, 175, 80, 1) 2px;
+    border-bottom: none;
+
+    transition: all 1.2s;
+
+}
+
+
+/*Intro*/
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    background: url("../agency/img/back.png") center no-repeat;
+    background-size: cover;
+    min-height: 820px;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    /*Установка текста для всего блока*/
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column
+}
+
+.intro__title {
+    /*Отсуп между h1 и h2 к низу*/
+    margin: 40px 0px 30px 0;
+
+    /*Настройки шрифта*/
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 72px;
+    /*настройки текста*/
+
+    /*межстрочный интервал, относительно размеру букв(Можно указывать нарпямую в px)*/
+    letter-spacing: 4.608px;
+
+}
+
+.intro__subtitle {
+    color: rgba(255, 255, 255, 1);
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 20px;
+    opacity: 0.8;
+
+    letter-spacing: 1.28px;
+}
+
+
+
+/* about */
+
+.about {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 50px 1fr;
+
+    width: 1200px;
+    margin: 8vw 10vw;
+    height: 560px;
+    padding: 150px;
+}
+
+.about__img {
+    display: grid;
+}
+
+
+
+.about__face {
+    grid-area: 2 / 2 / 2 / 2;
+    opacity: 1;
+
+
+
+    z-index: 2;
+}
+
+.about__green {
+    grid-area: 2 / 2 / 2 / 2;
+
+
+    margin-left: 140px;
+    margin-top: 35px;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.about__people {
+
+    grid-area: 2 / 2 / 2 / 2;
+    opacity: 0.8;
+
+    margin-left: 400px;
+    margin-top: 90px;
+    z-index: 0;
+}
+
+
+
+.about__title {
+    color: rgba(51, 51, 51, 1);
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-size: 36px;
+
+
+    letter-spacing: 2.3px;
+}
+
+.about__subtitle {
+    color: rgba(80, 78, 78, 1);
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 42px;
+
+
+    letter-spacing: 2.69px;
+
+}
+
+.about__subtitle__text {
+    color: rgba(91, 88, 88, 1);
+    font-family: 'OpenSans';
+    font-weight: 400;
+    font-size: 15px;
+
+    letter-spacing: 1.29px;
+
+    margin-top: 90px;
+}
+
+.servises{
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+        gap: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 10px;
+   
+}
